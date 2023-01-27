@@ -1,0 +1,30 @@
+.root {
+    font-family: 'Courier New', Courier, monospace;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    font-size: 11pt;
+    -fx-font-size: 11pt;
+    -fx-background-color: white;
+    background-color: white;
+}
+
+.month {
+    font-size: 13pt;
+    -fx-font-size: 13pt;
+    font-weight: bold;
+    -fx-font-weight: bold;
+}
+
+.day {
+    font-style: italic;
+    -fx-font-style: italic;
+}
+
+.weekDay {
+    font-weight: bold;
+    -fx-font-weight: bold;
+}
+
+.sunday {
+    -fx-color: red;
+    color: red;
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import calendario.MonthCalendar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="view" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/Calendar.css"
+	xmlns="http://javafx.com/javafx/17"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<padding>
+		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+	</padding>
+	<center>
+		<GridPane hgap="5.0" minHeight="0.0" minWidth="0.0" vgap="5.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+				<RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+				<RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+				<RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+				<RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+			</rowConstraints>
+			<children>
+				<MonthCalendar fx:id="eneroCalendar" />
+				<MonthCalendar fx:id="febreroCalendar" GridPane.columnIndex="2" />
+				<MonthCalendar fx:id="marzoCalendar" GridPane.columnIndex="4" />
+				<MonthCalendar fx:id="abrilCalendar" GridPane.columnIndex="6" />
+				<MonthCalendar fx:id="mayoCalendar" GridPane.rowIndex="2" />
+				<MonthCalendar fx:id="junioCalendar" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+				<MonthCalendar fx:id="julioCalendar" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+				<MonthCalendar fx:id="agostoCalendar" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+				<MonthCalendar fx:id="septiembreCalendar" GridPane.rowIndex="4" />
+				<MonthCalendar fx:id="octubreCalendar" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+				<MonthCalendar fx:id="noviembreCalendar" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+				<MonthCalendar fx:id="diciembreCalendar" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowSpan="2147483647" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowSpan="2147483647" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="5" GridPane.rowSpan="2147483647" />
+				<Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+				<Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+			</children>
+			<fx:define>
+				<java.util.ArrayList fx:id="mesesCalendarList">
+					<fx:reference source="eneroCalendar" />
+					<fx:reference source="febreroCalendar" />
+					<fx:reference source="marzoCalendar" />
+					<fx:reference source="abrilCalendar" />
+					<fx:reference source="mayoCalendar" />
+					<fx:reference source="junioCalendar" />
+					<fx:reference source="julioCalendar" />
+					<fx:reference source="agostoCalendar" />
+					<fx:reference source="septiembreCalendar" />
+					<fx:reference source="octubreCalendar" />
+					<fx:reference source="noviembreCalendar" />
+					<fx:reference source="diciembreCalendar" />
+				</java.util.ArrayList>
+			</fx:define>
+			<BorderPane.margin>
+				<Insets top="5.0" />
+			</BorderPane.margin>
+		</GridPane>
+	</center>
+	<top>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" />
+				<ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+				<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints vgrow="ALWAYS" />
+			</rowConstraints>
+			<children>
+				<Button mnemonicParsing="false" onAction="#onPreviousButtonAction" text="&lt;" styleClass="changeButton"/>
+				<Label fx:id="yearLabel" text="&lt;Año&gt;" GridPane.columnIndex="1" styleClass="year">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<Button mnemonicParsing="false" onAction="#onNextButtonAction" text="&gt;" GridPane.columnIndex="2" styleClass="changeButton"/>
+			</children>
+		</GridPane>
+	</top>
+</BorderPane>
